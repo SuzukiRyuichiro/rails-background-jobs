@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   after_commit :async_update
+  after_create :send_welcome_email
 
   private
 
@@ -14,5 +15,9 @@ class User < ApplicationRecord
 
   def async_update
     UpdateUserJob.perform_later(self)
+  end
+
+  def send_welcome_email
+    UserMailer.with(user: self).welcome.deliver_now
   end
 end
