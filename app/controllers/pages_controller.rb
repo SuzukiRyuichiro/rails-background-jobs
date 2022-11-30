@@ -5,6 +5,6 @@ class PagesController < ApplicationController
   end
 
   def sent
-    # GetContributionsJob.perform_later
+    GetContributionsJob.perform_later
   end
 end
