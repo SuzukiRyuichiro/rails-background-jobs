@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   after_commit :async_update
-  after_create :send_welcome_email
+  # after_create :send_welcome_email
 
   private
 
