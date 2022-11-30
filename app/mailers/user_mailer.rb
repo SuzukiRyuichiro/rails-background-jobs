@@ -10,4 +10,10 @@ class UserMailer < ApplicationMailer
 
     mail to: @user.email, subject: 'Welcome to Le Wagon'
   end
+
+  def contribution
+    @students = params[:students]
+
+    mail to: "dragon.aka.scooter@gmail.com", subject: "This month's contribution"
+  end
 end

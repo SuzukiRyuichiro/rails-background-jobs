@@ -55,6 +55,7 @@ gem "simple_form", github: "heartcombo/simple_form"
 
 gem 'sidekiq', '~> 6.5', '>= 6.5.8'
 gem "sidekiq-failures", "~> 1.0"
+gem 'nokogiri'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
